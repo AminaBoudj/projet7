@@ -1,0 +1,30 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Utiliser Node.js 16.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+
+    - name: Installer les dépendances
+      run: pip install -r requirements.txt
+
+    - name: Exécuter les tests
+      run: pytest
