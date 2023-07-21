@@ -25,12 +25,6 @@ def test_feats():
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
-"""def test_importances():
-    client_id = 100001
-    response = requests.get(f'http://127.0.0.1:80/importances?client_id={client_id}')
-    assert response.status_code == 200
-    assert isinstance(response.json(), list)
-"""
 def test_bar():
     client_id = 100001
     feature = "EXT_SOURCE_3"
